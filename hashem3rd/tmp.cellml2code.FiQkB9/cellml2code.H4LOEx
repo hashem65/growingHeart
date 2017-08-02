@@ -1,0 +1,72 @@
+#include <math.h>
+#include <stdio.h>
+extern double fabs(double x);
+extern double acos(double x);
+extern double acosh(double x);
+extern double atan(double x);
+extern double atanh(double x);
+extern double asin(double x);
+extern double asinh(double x);
+extern double acos(double x);
+extern double acosh(double x);
+extern double asin(double x);
+extern double asinh(double x);
+extern double atan(double x);
+extern double atanh(double x);
+extern double ceil(double x);
+extern double cos(double x);
+extern double cosh(double x);
+extern double tan(double x);
+extern double tanh(double x);
+extern double sin(double x);
+extern double sinh(double x);
+extern double exp(double x);
+extern double floor(double x);
+extern double pow(double x, double y);
+extern double factorial(double x);
+extern double log(double x);
+extern double arbitrary_log(double x, double base);
+extern double gcd_pair(double a, double b);
+extern double lcm_pair(double a, double b);
+extern double gcd_multi(unsigned int size, ...);
+extern double lcm_multi(unsigned int size, ...);
+extern double multi_min(unsigned int size, ...);
+extern double multi_max(unsigned int size, ...);
+extern void NR_MINIMISE(double(*func)(double VOI, double *C, double *R, double *S, double *A),double VOI, double *C, double *R, double *S, double *A, double *V);
+
+
+void OC_CellML_RHS_routine(double VOI, double* OC_STATE, double* OC_RATE, double* OC_WANTED, double* OC_KNOWN)
+{
+
+double DUMMY_ASSIGNMENT;
+double CONSTANTS[3], ALGEBRAIC[0];
+
+/* Constant fibrerate */
+DUMMY_ASSIGNMENT /*OC_KNOWN[0]*/ = 0.02;
+/* Constant sheetrate */
+DUMMY_ASSIGNMENT /*OC_KNOWN[1]*/ = 0.02;
+/* Constant normalrate */
+DUMMY_ASSIGNMENT /*OC_KNOWN[2]*/ = 0.02;
+/* Constant lambda1 */
+DUMMY_ASSIGNMENT /*OC_STATE[0]*/ = 1.0;
+/* Constant lambda2 */
+DUMMY_ASSIGNMENT /*OC_STATE[1]*/ = 1.0;
+/* Constant lambda3 */
+DUMMY_ASSIGNMENT /*OC_STATE[2]*/ = 1.0;
+/* Constant Element with no id */
+CONSTANTS[0] = OC_KNOWN[0];
+/* Constant Element with no id */
+CONSTANTS[1] = OC_KNOWN[1];
+/* Constant Element with no id */
+CONSTANTS[2] = OC_KNOWN[2];
+/* Rate Restore */
+OC_RATE[0] = CONSTANTS[0];
+/* Rate Restore */
+OC_RATE[1] = CONSTANTS[1];
+/* Rate Restore */
+OC_RATE[2] = CONSTANTS[2];
+
+
+}//OC_CellML_RHS_routine()
+
+;
